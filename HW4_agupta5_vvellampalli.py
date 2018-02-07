@@ -2,7 +2,7 @@
 """
 Created on Sat Feb  3 19:03:55 2018
 
-@author: Arpit, Deepak
+@author: Arpit
 """
 import time
 start_time = time.time()
@@ -22,14 +22,8 @@ test_faces = (np.load('mnist_test_images.npy'))
 test_faces_reshaped = reshape(np.load('mnist_test_images.npy'))
 test_labels = (np.load('mnist_test_labels.npy'))
 
-#def sigmoid(z):
- #   sigm = 1/(1+np.exp(-z))
-  #  return sigm
 
 def softmax(z):
-    
-    #z -= np.max(z)
-#    sm = (np.exp(z.T) / np.sum(np.exp(z),axis=1)).T
     sm = (np.exp(z) / np.sum(np.exp(z),axis=1)[: , np.newaxis])  
     return sm
 
@@ -49,26 +43,24 @@ def J(w,faces,labels,alpha = 0):
                                    
 def gradJ (w, faces, labels, alpha = 0):
     prob = y_hat(faces, w)
-    m = faces.shape[0]
     grad = np.dot(train_faces.T,(prob - labels))
     #+ 1e-3*w
     return grad
 
 def gradientDescent (trainingFaces, trainingLabels, testingFaces, testingLabels, alpha = 0.):
     w = np.zeros([train_faces.shape[1], 10])
-    #w = np.random.randn(trainingFaces.shape[1], 10)
     rate = 1e-5
-    #tol = 1e-3
-    #cost_old = []
     cost_new = []
     for i in range(0,500):
-        print(i)
+        print("Iteration: "+str(i))
         #w_old = np.copy(w)
         w = w - (rate*gradJ(w, trainingFaces, trainingLabels, alpha))
         #cost_old = J(w_old, trainingFaces, trainingLabels, alpha)
-        cost_new  = J(w, trainingFaces, trainingLabels, alpha)
+        if(i>479):
+            cost_new  = J(w, trainingFaces, trainingLabels, alpha)
+            print("The cost value is: "+str(cost_new))
         #print(cost_new)
-        print("The cost value is: "+str(cost_new))
+        
         
     return w
 
@@ -76,13 +68,12 @@ def soft_regression (trainingFaces, trainingLabels, testingFaces, testingLabels)
     alpha = 1e-2
     return gradientDescent(trainingFaces, trainingLabels, testingFaces, testingLabels,alpha)
 
-#W = soft_regression(train_faces, train_labels, test_faces, test_labels)
+#Comment next two lines after running the program once
+W = soft_regression(train_faces, train_labels, test_faces, test_labels)
+np.save('trained2', W)
 
-#np.save('trained2', W)
-
-W = np.load('trained2.npy')
-
-#W = w4
+#Uncomment the next line to run the code with the saved weights
+#W = np.load('trained2.npy')
 
 predictions = np.dot(train_faces, W)
 p1 = np.argmax(predictions,axis=1)
