@@ -1,16 +1,16 @@
 # CS-525-Deep-Learning
 
-homework1_agupta5_vvellampalli.py : Warming up with Numpy
+**homework1_agupta5_vvellampalli.py : Warming up with Numpy
 
-homework2_agupta5_vvellampalli.py : Smile Detection using simple perceptron
+**homework2_agupta5_vvellampalli.py : Smile Detection using simple perceptron
 
-homework3-1.py : Smile detectin with Whitened data
+**homework3-1.py : Smile detectin with Whitened data
 
-homework3-2.py : Smile Detection using Logistic Regression being framed as a simple Neural Network
+**homework3-2.py : Smile Detection using Logistic Regression being framed as a simple Neural Network
 
-HW4_agupta5_vvellampalli.py : Softmax Regression on MNIST dataset
+**HW4_agupta5_vvellampalli.py : Softmax Regression on MNIST dataset
 
-hw5_agupta5_vvellampalli.py : First Deep Neural Network (1 hidden layer) developed for MNIST dataset, programatically tuning hyperparameters
+**hw5_agupta5_vvellampalli.py : First Deep Neural Network (1 hidden layer) developed for MNIST dataset, programatically tuning hyperparameters
 
 
 
