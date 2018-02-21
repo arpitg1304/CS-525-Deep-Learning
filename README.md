@@ -1,6 +1,6 @@
 # CS-525-Deep-Learning
 
-**homework1_agupta5_vvellampalli.py : Warming up with Numpy
+**homework1_agupta5_vvellampalli.py : Warming up with Numpy**
 
 homework2_agupta5_vvellampalli.py : Smile Detection using simple perceptron
 
