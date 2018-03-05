@@ -12,6 +12,8 @@
 
 **hw5_agupta5_vvellampalli.py : First Deep Neural Network (1 hidden layer) developed for MNIST dataset, programatically tuning hyperparameters**
 
+**RNN : Recurrent Neural Network to solve n-back problem. Implementation done in python from scratch only using numpy, not external dataset required **
+
 
 
 Data sets for HW 4 and HW 5 can be downloaded from the following links:
